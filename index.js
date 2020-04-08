@@ -3,4 +3,4 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("output").innerHTML
             = Math.ceil(Math.random() * 6)
     })
-})
+});

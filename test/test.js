@@ -1,4 +1,4 @@
-var rolledFace = require('../dieRoller.js');
+var dieRoller = require('../dieRoller.js');
 
 var assert = require('assert');
 
@@ -9,7 +9,7 @@ var assertChai = require('chai').assert;
     //   assert.equal(rolledFace(), 5);
     // });
     it('should return 1-6', function() {
-        assertChai.isBelow(rolledFace(), 7);
+        assertChai.isBelow(dieRoller(), 7);
       });
   });
 

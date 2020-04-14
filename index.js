@@ -11,4 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         document.getElementById("sum").innerHTML = sumOfDice;
     })
+    document.getElementById("addNewDie").addEventListener("click", () => {
+        var newDie = document.createElement("p")
+        newDie.innerHTML = "Die: "
+        var newOutput = document.createElement("span")
+        newOutput.className = "output"
+        newDie.appendChild(newOutput)
+        document.getElementById("diceBucket").appendChild(newDie)
+    })
+
 });

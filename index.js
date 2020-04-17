@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         document.getElementById("sum").innerHTML = sumOfDice;
     })
+    var x = 0
     document.getElementById("addNewDie").addEventListener("click", () => {
         var newDie = document.createElement("p")
-        newDie.innerHTML = "Die: "
+        x += 1
+        newDie.innerHTML = "Die " + x + ": "
         var newOutput = document.createElement("span")
         newOutput.className = "output"
         newDie.appendChild(newOutput)

@@ -1,11 +1,11 @@
-var dieRoller = require('./dieRoller.js');
+var Die = require('./die.js');
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("d6").addEventListener("click", () => {
         var sumOfDice = 0;
         var dice = document.getElementsByClassName("output");
         for (var i = 0; i < dice.length; i++) {
-            var rolled = dieRoller();
+            var rolled = Die.roll();
             dice.item(i).innerHTML = rolled;
             sumOfDice += rolled;
         }

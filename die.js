@@ -1,5 +1,9 @@
 module.exports = class Die {
-    static roll() {
-        return Math.ceil(Math.random() * 6);
+    constructor(id, numSides) {
+        this.id = id
+        this.numSides = numSides
+    }
+    roll() {
+        return Math.ceil(Math.random() * this.numSides);
     }
 }

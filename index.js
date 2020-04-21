@@ -18,13 +18,22 @@ document.addEventListener("DOMContentLoaded", () => {
         var newDieElement = document.createElement("p")
         dieIndex += 1
         var dieId = "die-" + dieIndex
-        var die = new Die(dieId, 6)
-        newDieElement.innerHTML = "Die " + dieIndex + ": "
-        var newOutput = document.createElement("span")
-        newOutput.id = dieId
-        newDieElement.appendChild(newOutput)
-        document.getElementById("diceBucket").appendChild(newDieElement)
-        dice.push(die)
+        var numSides = document.getElementById("numSides").value
+        if (isNaN(numSides)) {
+            window.alert("No Dice! That's not a number.")
+        } else if (numSides <= 0) {
+            window.alert("Stay Positive! Number of sides must be greater than zero.")
+        } else if (numSides % 1 != 0 ) {
+            window.alert("Stay Wholesome! Whole numbers only, please.")
+        } else {
+            var die = new Die(dieId, numSides)
+            newDieElement.innerHTML = "Die " + dieIndex + " (" + numSides + " sides): "
+            var newOutput = document.createElement("span")
+            newOutput.id = dieId
+            newDieElement.appendChild(newOutput)
+            document.getElementById("diceBucket").appendChild(newDieElement)
+            dice.push(die)
+        }
     })
     document.getElementById("removeDie").addEventListener("click", () => {
        var diceBucket = document.getElementById("diceBucket")

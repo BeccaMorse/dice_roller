@@ -26,5 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("diceBucket").appendChild(newDieElement)
         dice.push(die)
     })
-
+    document.getElementById("removeDie").addEventListener("click", () => {
+       var diceBucket = document.getElementById("diceBucket")
+       diceBucket.removeChild(diceBucket.lastElementChild)
+       dice.pop()
+       dieIndex -= 1
+    })
 });

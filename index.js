@@ -19,13 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         dieIndex += 1
         var dieId = "die-" + dieIndex
         var numSides = document.getElementById("numSides").value
-        if (isNaN(numSides)) {
-            window.alert("No Dice! That's not a number.")
-        } else if (numSides <= 0) {
-            window.alert("Stay Positive! Number of sides must be greater than zero.")
-        } else if (numSides % 1 != 0 ) {
-            window.alert("Stay Wholesome! Whole numbers only, please.")
-        } else {
+
+        try {
             var die = new Die(dieId, numSides)
             newDieElement.innerHTML = "Die " + dieIndex + " (" + numSides + " sides): "
             var newOutput = document.createElement("span")
@@ -33,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
             newDieElement.appendChild(newOutput)
             document.getElementById("diceBucket").appendChild(newDieElement)
             dice.push(die)
+        } catch (e) {
+            window.alert(e)
         }
     })
     document.getElementById("removeDie").addEventListener("click", () => {

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             var die = new Die(dieId, numSides)
-            newDieElement.innerHTML = "Die " + dieIndex + " (" + numSides + " sides): "
+            newDieElement.innerHTML = numSides + "-Sided Die: "
             var newOutput = document.createElement("span")
             newOutput.id = dieId
             newDieElement.appendChild(newOutput)

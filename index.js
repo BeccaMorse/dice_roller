@@ -1,5 +1,14 @@
 var Die = require('./die.js');
 
+const createDie = (dice, numSides) => {
+    var die = new Die("die-" + dice.length, numSides)
+    dice.push(die)
+    document.getElementById("diceBucket").insertAdjacentHTML("beforeend",
+        "<p>" + numSides + "-Sided Die: " +
+        "<span id=\"" + die.id + "\"><span>" +
+    "</p>")
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     var dice = [];
     document.getElementById("d6").addEventListener("click", () => {
@@ -14,16 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("sum").innerHTML = sumOfDice;
     })
     document.getElementById("addNewDie").addEventListener("click", () => {
-        var newDieElement = document.createElement("p")
         var numSides = document.getElementById("numSides").value
         try {
-            var die = new Die("die-" + dice.length, numSides)
-            newDieElement.innerHTML = numSides + "-Sided Die: "
-            var newOutput = document.createElement("span")
-            newOutput.id = die.id
-            newDieElement.appendChild(newOutput)
-            document.getElementById("diceBucket").appendChild(newDieElement)
-            dice.push(die)
+            createDie(dice, numSides)
         } catch (e) {
             window.alert(e)
         }

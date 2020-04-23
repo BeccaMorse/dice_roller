@@ -13,18 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         document.getElementById("sum").innerHTML = sumOfDice;
     })
-    var dieIndex = 0
     document.getElementById("addNewDie").addEventListener("click", () => {
         var newDieElement = document.createElement("p")
-        dieIndex += 1
-        var dieId = "die-" + dieIndex
         var numSides = document.getElementById("numSides").value
-
         try {
-            var die = new Die(dieId, numSides)
+            var die = new Die("die-" + dice.length, numSides)
             newDieElement.innerHTML = numSides + "-Sided Die: "
             var newOutput = document.createElement("span")
-            newOutput.id = dieId
+            newOutput.id = die.id
             newDieElement.appendChild(newOutput)
             document.getElementById("diceBucket").appendChild(newDieElement)
             dice.push(die)
@@ -36,6 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
        var diceBucket = document.getElementById("diceBucket")
        diceBucket.removeChild(diceBucket.lastElementChild)
        dice.pop()
-       dieIndex -= 1
     })
 });

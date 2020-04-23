@@ -9,17 +9,21 @@ const createDie = (dice, numSides) => {
     "</p>")
 }
 
+const rollAllDice = (dice) => {
+    var sumOfDice = 0;
+    for (dieIndex in dice) {
+        var die = dice[dieIndex]
+        var rolled = die.roll()
+        document.getElementById(die.id).innerHTML = rolled
+        sumOfDice += rolled;
+    }
+    return sumOfDice
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     var dice = [];
-    document.getElementById("d6").addEventListener("click", () => {
-        var sumOfDice = 0;
-        var dieElements = document.getElementsByClassName("output");
-        for (var i = 0; i < dice.length; i++) {
-            var die = dice[i]
-            var rolled = die.roll()
-            document.getElementById(die.id).innerHTML = rolled
-            sumOfDice += rolled;
-        }
+    document.getElementById("rollAllDice").addEventListener("click", () => {
+        var sumOfDice = rollAllDice(dice)
         document.getElementById("sum").innerHTML = sumOfDice;
     })
     document.getElementById("addNewDie").addEventListener("click", () => {

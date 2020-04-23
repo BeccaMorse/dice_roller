@@ -9,3 +9,4 @@ When we roll the dice we display a random face of the die.
 Add die button adds a die
 Remove die button removes one.
 Input for number of faces via text box (default is 6)
+Each die has an individual roll button

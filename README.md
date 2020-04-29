@@ -10,3 +10,7 @@ Add die button adds a die
 Remove die button removes one.
 Input for number of faces via text box (default is 6)
 Each die has an individual roll button
+
+User can choose dice with 1-100 sides.
+
+Functions as a 'web app.'

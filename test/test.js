@@ -28,5 +28,11 @@ describe('die', function () {
         var die = new Die("die", 3.14)
       }, Error, "Stay Wholesome! Whole numbers only, please.")
     })
+
+    it('should be less than 101', function () {
+      assert.throws(() => {
+        var die = new Die("die",101)
+      }, Error, "100 or under, please!")
+    })
   });
 });

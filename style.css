@@ -1,0 +1,53 @@
+body {
+    background: lightblue;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background: royalblue;
+    color: white;
+    padding: 8px
+}
+
+h1 {
+    margin: 8px;
+    font-size: 28px;
+}
+
+main {
+    margin: 8px;
+}
+
+#num-sides {
+    margin: 8px;
+}
+
+input {
+    width: 40px;
+    font-size: 14px;
+}
+
+button {
+    background: dodgerblue;
+    color:      white;
+    padding:    8px;
+    border:     none;
+    border-radius: 4px;
+    margin:         2px;
+    font-size: initial;
+}
+
+.die-container {
+    margin: 6px;
+}
+
+.die {
+    background: white;
+    padding:    8px;
+    border-radius:  4px;
+    width:          28px;
+    line-height:    28px;
+    display:        inline-block;
+    text-align:     center;
+}

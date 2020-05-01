@@ -4,9 +4,10 @@ const createDie = (dice, numSides) => {
     var die = new Die("die-" + dice.length, numSides)
     dice.push(die)
     document.getElementById("diceBucket").insertAdjacentHTML("beforeend",
-        "<p>" + numSides + "-Sided Die: " +
-        "<span id=\"" + die.id + "\"><span>" +
-    "</p>")
+        "<div class=\"die-container\">" +
+        "<span class=\"die\" id=\"" + die.id + "\">" + numSides + "</span> (" +
+        numSides + " sides)" +
+    "</div>")
 }
 
 const rollAllDice = (dice) => {

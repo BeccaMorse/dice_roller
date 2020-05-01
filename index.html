@@ -1,11 +1,24 @@
+<link rel="stylesheet" href="style.css"></link>
 <script src="index.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<button id="rollAllDice">Roll Dice</button>
-<button id="addNewDie">Add New Die</button>
-<button id="removeDie">Remove a Die</button>
+<header>
+    <h1>Welcome to Die Roller!</h1>
+</header>
+<main>
+    <div id="num-sides">
+        Enter # of sides (1-100):
+        <input id="numSides" value="6">
+    </div>
 
-How many sides (1-100) would you like on your new Die?<input id="numSides" value="6">
+    <button id="addNewDie">Add New Die</button>
+    <button id="removeDie">Remove a Die</button>
 
-<div id="diceBucket">
-</div>
-<p>Sum of Dice: <span id="sum"></span></p>
+    <div id="diceBucket">
+    </div>
+
+    <div>
+        <button id="rollAllDice">Roll All Dice</button>
+        Sum: <span id="sum"></span>
+    </div>
+</main>
